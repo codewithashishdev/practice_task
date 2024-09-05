@@ -26,7 +26,6 @@ export const Register = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      console.log(formData);
       const response = await fetch(
         "http://localhost:4000/api/v1/auth/registration",
         {
@@ -38,7 +37,6 @@ export const Register = () => {
         }
       );
       const data = await response.json();
-      console.log(data);
       if (data.status_code !== 200) {
         toast.error(data.message);
       } else {

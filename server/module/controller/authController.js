@@ -56,7 +56,6 @@ const login = async (req, res, next) => {
 const registration = async (req, res, next) => {
 
     // Validate the request body
-    console.log(req.body);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return sendResponse(res, 400, false, errors.array()[0].msg, null);
