@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+textarea,
+input {
+  font-family: "Roboto", sans-serif;
+}
+
+.mountain {
+  height: 90vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* @keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+.loginForm {
+  height: 70vh;
+  width: 25vw;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3),
+    -4px -4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.loginForm select {
+  height: 48px;
+  padding: 6px 0px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  font-size: 20px;
+}
+
+.heading {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading h1{
+  margin: 25px 0px;
+}
+
+h2,
+h3 {
+  margin: 0px 0px;
+}
+
+.heading p {
+  font-size: 14px;
+  margin: 5px 0px;
+}
+
+.heading .generalInfo {
+  font-size: 12px;
+  color: gray;
+}
+
+.Form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 25px;
+}
+
+.Form-group label {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.Form-group input {
+  font-size: 18px;
+  height: 40px;
+  border: 1px solid rgb(175, 175, 175);
+  border-radius: 5px;
+}
+
+.Form-group .registerBtn {
+  font-size: 20px;
+  height: 48px;
+  color: white;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 115, 0);
+  background-color: rgb(255, 115, 0);
+}
+
+.Form-group-Info p {
+  font-size: 20px;
+  margin-top: 20px;
+  color: gray;
+  display: flex;
+  justify-content: center;
+}
+
+.Form-group-Info p a {
+  text-decoration: underline;
+  color: gray;
+}
+
+.Form-group-checkbox {
+  display: flex;
+  gap: 26px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Form-group-checkbox label {
+  font-size: 11px;
+}
+
+/* UserSelection Page */
+.user-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.user-selection h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.user-selection button {
+  background-color: rgb(255, 115, 0);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s;
+}
+
+.user-selection button:hover {
+  background-color: orangered;
+}
