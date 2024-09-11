@@ -3,12 +3,22 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-export const Register = () => {
+// Define the type for form data
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  role: string;
+}
+
+export const Register: React.FC = () => {
   const location = useLocation();
-  const role = location.state?.role || "customer";
+  const role = (location.state as { role?: string })?.role || "customer";
   const navigate = useNavigate();
 
-  const initialFormData = {
+  // Initialize form data with appropriate types
+  const initialFormData: FormData = {
     firstName: "",
     lastName: "",
     email: "",
@@ -16,14 +26,16 @@ export const Register = () => {
     role: role,
   };
 
-  const [formData, setFormData] = useState(initialFormData);
+  const [formData, setFormData] = useState<FormData>(initialFormData);
 
-  const handleChange = (e) => {
+  // Type the handleChange event
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  // Type the handleSubmit event
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
       const response = await fetch(
@@ -56,7 +68,7 @@ export const Register = () => {
           <div className="heading">
             <h1>Registration</h1>
           </div>
-          {/* form start*/}
+          {/* form start */}
           <form onSubmit={handleSubmit}>
             <div className="Form-group">
               <label htmlFor="firstName" className="form-label">

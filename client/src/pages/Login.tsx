@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from "react-router-dom";
 
-export const Login = () => {
-  const history = useNavigate();
-  const [formData, setFormData] = useState({
+// Define the type for form data
+interface FormData {
+  email: string;
+  password: string;
+}
+
+export const Login: React.FC = () => {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
   });
 
-  const handleChange = (e) => {
+  // Type the handleChange event
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  // Type the handleSubmit event
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await fetch("http://localhost:4000/api/v1/auth/login", {
@@ -38,7 +46,7 @@ export const Login = () => {
           progress: undefined,
           style: { backgroundColor: "red", color: "white" },
         });
-      }else{
+      } else {
         toast.success("Login successful!", {
           position: "top-right",
           autoClose: 3000,
@@ -47,11 +55,12 @@ export const Login = () => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          style: { backgroundColor: "rgb(255, 115, 0)", color: "white" }
+          style: { backgroundColor: "rgb(255, 115, 0)", color: "white" },
         });
+        navigate("/dashboard"); // Redirect to a different page on successful login
       }
     } catch (err) {
-      toast.error("Error in registration", {
+      toast.error("Error in login", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -63,6 +72,7 @@ export const Login = () => {
       });
     }
   };
+
   return (
     <>
       <div className="mountain">
@@ -70,7 +80,7 @@ export const Login = () => {
           <div className="heading">
             <h1>Login</h1>
           </div>
-          {/* form start*/}
+          {/* form start */}
           <form onSubmit={handleSubmit}>
             <div className="Form-group">
               <label htmlFor="employeeEmailId" className="form-label">

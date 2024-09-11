@@ -1,6 +1,7 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export const UserSelection = () => {
+export const UserSelection: React.FC = () => {
   const navigate = useNavigate();
 
   const handleCustomerRegistration = () => {
