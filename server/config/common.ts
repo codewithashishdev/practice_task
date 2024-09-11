@@ -1,5 +1,3 @@
-// const { general } = require("../language/en.json")
-
 import Language from "../language/en.json";
 import { Response } from "express";
 
@@ -36,8 +34,3 @@ export const serverErrorResponse = async (res: Response, data:any = {}) => {
     errors: data,
   });
 };
-
-// module.exports = {
-//   sendResponse,
-//   serverErrorResponse,
-// };

@@ -1,5 +1,5 @@
 import express, { Application } from "express";
-import bodyParser from "body-parser"; // Adjust import according to TypeScript support
+import bodyParser from "body-parser";
 import cors from "cors";
 import session from "express-session";
 import fileUpload from "express-fileupload";
